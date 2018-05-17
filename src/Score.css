@@ -1,0 +1,174 @@
+githtml, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+  a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp,
+  small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd,
+  ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td,
+  article, aside, canvas, details, embed,  figure, figcaption, footer, header, hgroup,
+  menu, nav, output, ruby, section, summary, time, mark, audio, video
+{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+} 
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section
+{
+  display: block;
+}
+
+body
+{
+  line-height: 1;
+}
+
+ol, ul
+{
+  list-style: none;
+}
+
+blockquote, q
+{
+  quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after
+{
+  content: '';
+  content: none;
+}
+
+table
+{
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+*, body{
+        -webkit-text-size-adjust: none;
+}
+
+
+/* ============================== AFTER-RESET ======================== */
+
+html, body {
+    background-color: #CFC8FF;
+    max-width: 1350px;
+    font-family:cursive, sans-serif;
+    text-shadow: 2px 2px 3px gray;
+}
+
+
+#gameName {
+    font-size: 48px;
+    width: 720px;
+    margin: 20px auto;
+    letter-spacing: 3px;
+}
+
+#name1 {color: #F6F6F6;}
+#name2 {color: #474E6B;}
+#name3 {color: #21C2F8;}
+#md {
+    color: #626262;
+    font-weight: bold;
+}
+
+#name1, #name2, #name3 {
+    font-weight: bold;
+    letter-spacing: -3px;
+    font-size: 54px;
+}
+
+.color1 {color: #D300C9;}
+.color2 {color: #7A00E5;}
+.color3 {color: #0068FF;}
+.color4 {color: #00BC3F;}
+.color5 {color: #FFFF00;}
+.color6 {color: #FF7F00;}
+.color7 {color: #FF0000;}
+
+#tableName {
+    color: red;
+    width: 330px;
+    margin: 30px auto;
+    font-weight: bold;
+    letter-spacing: -3px;
+    font-size: 46px;
+    animation: scoreAnimation 2s infinite;
+}
+
+@keyframes scoreAnimation {
+    0% {color: black;  text-shadow: 4px 4px 6px gray; opacity: 0.7;}
+    50% {color: red;  text-shadow: 4px 4px 6px black;opacity: 0.7;}
+    100% {color: black;  text-shadow: 4px 4px 6px gray;opacity: 0.7;}
+
+    }
+
+#tableWrapp table {
+    font-size: 34px;
+    font-weight: bold;
+    margin: 0 auto;
+    width: 700px;
+}
+    
+#tableWrapp tr, th {
+    border: 0px solid gray;
+    padding: 5px;
+    color: #474E6B;
+}
+
+#playAgain {
+    position: fixed;
+    top: 600px;
+    left: 60px;
+    text-decoration: none;  
+    font-size: 44px; 
+    font-weight: bold;
+    animation: searchAnim 1.5s infinite,
+               againAnimation 4s infinite;
+     animation-timing-function: linear;
+	
+}
+
+#playAgain:hover {
+    animation: telAnim 1s both,
+               againAnimation 4s infinite;
+    animation-timing-function: linear;             
+	
+}
+
+@keyframes searchAnim {
+	from {
+		transform: rotate(0deg);}
+	50% {transform: rotate(2deg);}
+	to {
+		transform: rotate(-2deg);}	
+}
+
+@keyframes telAnim {
+	from {
+		transform: scale(1);
+	}
+	to {
+		transform: scale(1.1);
+	}
+	
+}
+
+@keyframes againAnimation {
+    0% {color: #D300C9;}
+    7.5% {color: #7A00E5;}
+    15% {color: #0068FF;}
+    22.5% {color: #00BC3F;}
+    30% {color: #FFFF00;}
+    37.5% {color: #FF7F00;}
+    45% {color: #FF0000;}
+    52.5% {color: #FF7F00;}
+    60% {color: #FFFF00;}
+    67.5% {color: #00BC3F;}
+    75% {color: #0068FF;}
+    82.5% {color: #7A00E5;}
+    100% {color: #D300C9;}
+    }

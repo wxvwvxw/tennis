@@ -1,0 +1,241 @@
+githtml, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+  a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp,
+  small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd,
+  ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td,
+  article, aside, canvas, details, embed,  figure, figcaption, footer, header, hgroup,
+  menu, nav, output, ruby, section, summary, time, mark, audio, video
+{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+} 
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section
+{
+  display: block;
+}
+
+body
+{
+  line-height: 1;
+}
+
+ol, ul
+{
+  list-style: none;
+}
+
+blockquote, q
+{
+  quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after
+{
+  content: '';
+  content: none;
+}
+
+table
+{
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+*, body{
+        -webkit-text-size-adjust: none;
+}
+
+
+/* ============================== AFTER-RESET ======================== */
+
+html, body {
+    background-color: #CFC8FF;
+}
+
+#wrapper {
+    max-width: 1350px;
+    font-family:cursive, sans-serif;
+    text-shadow: 2px 2px 3px gray;
+}
+
+
+#field {
+    position: relative;
+    width: 945px;
+    height: 500px;
+    margin: 15px auto;
+    border: 3px solid #696969;
+    background-color: #DCDCDC;
+    opacity: 0.6;
+    box-shadow: 0 0 20px gray inset;
+}
+
+#player1 {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 17px;
+    height: 130px;
+    background-color: #7B68EE;
+    box-shadow: 2px 2px 3px gray;
+}
+
+#player2 {
+    position: absolute;
+    bottom: 50px;
+    right: 0;
+    width: 17px;
+    height: 130px;
+    background-color: #00CD7E;
+    box-shadow: 2px 2px 3px gray;
+}
+
+#field, #player1, #player2 {
+    border-radius: 10px;
+}
+
+@keyframes ballAnimation {
+    0% {background-color: #D300C9;}
+    17% {background-color: #7A00E5;}
+    34% {background-color: #0068FF;}
+    51% {background-color: #00BC3F;}
+    68% {background-color: #FFFF00;}
+    85% {background-color: #FF7F00;}
+    100% {background-color: #FF0000;}
+    }
+
+#ball {
+    position: absolute;
+    top: 180px;
+    left: 300px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: solid 3px #ffffff;
+    opacity: 0.75;
+    animation: ballAnimation 5s infinite;
+    transform: translateZ(0);
+    box-shadow: 2px 2px 3px gray;
+}
+
+#gameName {
+    font-size: 48px;
+    width: 720px;
+    margin: 20px auto;
+    letter-spacing: 3px;
+}
+
+#name1 {color: #F6F6F6;}
+#name2 {color: #474E6B;}
+#name3 {color: #21C2F8;}
+#md {
+    color: #626262;
+    font-weight: bold;
+}
+
+#name1, #name2, #name3 {
+    font-weight: bold;
+    letter-spacing: -3px;
+    font-size: 54px;
+}
+
+.color1 {color: #D300C9;}
+.color2 {color: #7A00E5;}
+.color3 {color: #0068FF;}
+.color4 {color: #00BC3F;}
+.color5 {color: #FFFF00;}
+.color6 {color: #FF7F00;}
+.color7 {color: #FF0000;}
+
+#scoreNameWrapp {
+    width: 150px;
+    margin: 0 35%;
+    font-weight: bold;
+    color: #474E6B;
+    font-size: 32px;
+    text-align: center;
+}
+
+.scorePlayers {
+    width: 40px;
+    height: 35px;
+    padding: 1px 3px;
+    border-radius: 5px;
+    border: 3px solid #696969;
+    opacity: 0.6;
+    font-size: 32px;
+    font-family:cursive, sans-serif;
+    text-shadow: 2px 2px 3px gray;
+}
+
+#touchControl1 {
+    width: 75px;
+    position: absolute;
+    top: 160px;
+    left: 4%;
+}
+
+#touchControl2 {
+    width: 75px;
+    position: absolute;
+    top: 160px;
+    left: 1130px;
+}
+
+.controlButtons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px;
+    width:120px;
+    height:120px;
+    border-radius: 50%;
+    border: solid 3px #EBE9FF;
+    background-color: #8EB66F;
+    opacity: 0.8;
+    font-weight: bold;
+    color: #474E6B;
+    font-size: 34px;
+    transition-duration: 0.1s;
+    box-shadow: 4px 4px 6px gray;
+}
+
+.controlButtons:hover {
+    cursor: pointer;
+    border: solid 3px #EBE9FF;
+    background-color:#474E6B;
+    color: #EBE9FF;
+}
+
+.arrow {
+    font-size: 80px;
+    padding-bottom: 15px;
+    font-weight: normal;
+    vertical-align: super;
+}
+
+
+.canvas-wrapper{
+    position: absolute;
+    left: 283px;
+    top: 160px;
+}
+
+#gameTimer {
+    position: absolute;
+    top: 105px;
+    left: 940px;
+    color: red;
+    opacity: 0.7;
+    font-size: 0.7em;
+    animation: timerAnimation 1s infinite;
+}
+
+@keyframes timerAnimation {
+    0% {opacity: 0.2;}
+    100% {opacity: 0.8;}
+    }
