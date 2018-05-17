@@ -2,7 +2,8 @@ import Sprite from './sprite';
 
 class Bonus {
 
-    constructor({position={x:100, y: 0}, title='', timeout=30, size=20, handler, image}){
+    constructor({id, position={x:100, y: 0}, title='', timeout=30, size=20, handler, image}){
+        this.id = id;
         this.position = position;
         this.title = title;
         this.timeout = timeout;

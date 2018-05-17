@@ -15,10 +15,11 @@ const bonus_spped_up = require('./assets/bonus_spped_up.png');
 
 const PLAYER_SIZE = 10;
 const PLAYER_WIDTH = 100;
-const BONUS_TIMEOUT = 5000;
+const BONUS_TIMEOUT = 3000;
+const BONUS_LIFE_TIME = 5000;
 const BONUS_SIZE = 50;
 const DEFAULT_SPEED = 300;
-const PLAYER_ACCELERATION = 25;
+const PLAYER_ACCELERATION = 40;
 
 const loadTexture = (src) => {
     return new Promise((resolve, reject)=>{
@@ -137,23 +138,33 @@ class Game {
             this.bonus = [];
 
             this.collisionSound = collisionSound;
+            setTimeout(()=>this.addBonus(), BONUS_TIMEOUT);
         })
     }
 
     start(){
         this.ball.setDirection({
-            x: (0.5- Math.random()) *3,
-            y: (0.5- Math.random()) *3
+            x: (0.5 - Math.random()) * 4,
+            y: (Math.random()/2) * (Math.random() > 0.5?1:-1)
         });
         this.ball.speed = DEFAULT_SPEED;
-        setTimeout(()=>this.addBonus(), BONUS_TIMEOUT);
+    }
+
+    playSound(){
+        try{
+            this.collisionSound.play();
+        }
+        catch(e){}
     }
 
     update(time){
         if (!time)
             return;
+        // пересчитываем координаты мяча
         this.ball.position.x = this.ball.position.x + (this.ball.direction.x * this.ball.speed * time);
         this.ball.position.y = this.ball.position.y + (this.ball.direction.y * this.ball.speed * time);
+
+        // пересчитываем координаты ракеток
         this.player1.updatePosition({time, field: this.field});
         this.player2.updatePosition({time, field: this.field});
 
@@ -169,7 +180,7 @@ class Game {
                 x: - this.ball.direction.x, 
                 y: yPlayerFactor * 0.5 + this.ball.direction.y *.25
             });
-            this.ball.speed += PLAYER_ACCELERATION;
+            this.ball.speed += (PLAYER_ACCELERATION * (this.player2.isJump?1.3:1));
             this.ball.position.x =   this.ball.position.x - (this.ball.position.x - this.player2.position.x) ;
             this.collisionSound.play();
         }
@@ -184,7 +195,7 @@ class Game {
                 x: - this.ball.direction.x, 
                 y: yPlayerFactor * 0.5 + this.ball.direction.y *.25
             });
-            this.ball.speed += PLAYER_ACCELERATION;
+            this.ball.speed += (PLAYER_ACCELERATION * (this.player1.isJump?1.3:1));
             this.ball.position.x = 2 * this.player1.size + this.ball.position.x;
             this.collisionSound.play();
         }
@@ -237,7 +248,7 @@ class Game {
             image: randomBonus.image
         });
         this.bonus.push(bonus);
-        setTimeout(()=>this.deleteBonus(bonus.id), BONUS_TIMEOUT);
+        setTimeout(()=>this.deleteBonus(bonus.id), BONUS_LIFE_TIME);
         setTimeout(()=>this.addBonus(), BONUS_TIMEOUT);
     }
 
