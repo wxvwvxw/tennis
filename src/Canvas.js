@@ -153,36 +153,36 @@ class Scene extends Component {
               </div>
 
               <div id='touchControl1'>
-                  <div onMouseDown={()=>this.game.player1.startMove(-1)}
+                  <button onMouseDown={()=>this.game.player1.startMove(-1)}
                     onTouchStart={()=>this.game.player1.startMove(-1)} 
                     onMouseUp={()=>this.game.player1.stopMove()}
-                    onTouchEnd={()=>this.game.player1.stopMove()} id='up1' className='controlButtons'>Up</div>
-                  <div onClick={()=>this.game.player1.jump()}
-                       onTouchStart={()=>this.game.player1.jump()} id='arrow1' className='controlButtons'><span className='arrow'> &gt; </span></div>
-                  <div onMouseDown={()=>this.game.player1.startMove(1)}
+                    onTouchEnd={()=>this.game.player1.stopMove()} id='up1' className='controlButtons'>Up</button>
+                  <button onClick={()=>this.game.player1.jump()}
+                       onTouchStart={()=>this.game.player1.jump()} id='arrow1' className='controlButtons'><span className='arrow'> &gt; </span></button>
+                  <button onMouseDown={()=>this.game.player1.startMove(1)}
                        onTouchStart={()=>this.game.player1.startMove(1)} 
                     onMouseUp={()=>this.game.player1.stopMove()}
-                    onTouchEnd={()=>this.game.player1.stopMove()} id='down1' className='controlButtons'>Down</div>
+                    onTouchEnd={()=>this.game.player1.stopMove()} id='down1' className='controlButtons'>Down</button>
               </div>
               <div id='touchControl2'>
-                  <div 
+                  <button 
                     onMouseDown={()=>this.game.player2.startMove(-1)}
                     onTouchStart={()=>this.game.player2.startMove(-1)} 
                     onMouseUp={()=>this.game.player2.stopMove()}
                     onTouchEnd={()=>this.game.player2.stopMove()} 
-                  id='up2' className='controlButtons'>Up</div>
-                  <div 
+                  id='up2' className='controlButtons'>Up</button>
+                  <button 
                     onClick={()=>this.game.player2.jump()}
                     onTouchStart={()=>this.game.player2.jump()}
                     id='arrow2' className='controlButtons'>
                     <span className='arrow'> &lt; </span>
-                  </div>
-                  <div 
+                  </button>
+                  <button 
                     onMouseDown={()=>this.game.player2.startMove(1)}
                     onTouchStart={()=>this.game.player2.startMove(1)} 
                     onMouseUp={()=>this.game.player2.stopMove()}
                     onTouchEnd={()=>this.game.player2.stopMove()}
-                    id='down2' className='controlButtons'>Down</div>
+                    id='down2' className='controlButtons'>Down</button>
               </div>
 
           </div>

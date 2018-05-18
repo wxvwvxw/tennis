@@ -186,6 +186,7 @@ html, body {
     left: 1130px;
 }
 
+
 .controlButtons {
     display: flex;
     align-items: center;
@@ -200,6 +201,7 @@ html, body {
     font-weight: bold;
     color: #474E6B;
     font-size: 34px;
+    font-family:cursive, sans-serif;
     transition-duration: 0.1s;
     box-shadow: 4px 4px 6px gray;
 }
